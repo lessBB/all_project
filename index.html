@@ -380,23 +380,6 @@
 
             //放大镜效果
             preview();
-            //封装一个节流函数
-
-            function jieliu(fn,time){
-                var lastTime = 0;
-                return function(){
-                    var _this = this;
-                    var timeNow = Date.now();
-                    
-                    if(timeNow - lastTime < time){
-                        return;
-                    }
-                    lastTime = timeNow;
-                    fn.call(_this,arguments[0]);
-                }
-            }
-            
-
             function preview(){
                 //给小图区域绑定鼠标移入事件,一定要给div绑，如果给图片帮，后面更换图片就触发不了
                 var oSmallArea = document.querySelector(".previewArea .preview .smallArea");
